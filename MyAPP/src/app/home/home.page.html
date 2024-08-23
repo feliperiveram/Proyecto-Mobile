@@ -14,7 +14,26 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Login</ion-card-title>
+        <ion-card-subtitle>¡Bienvenido!</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-input label="Usuario" labelPlacement="floating"
+              placeholder="Ingrese su usuario"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Contraseña" type="password" labelPlacement="floating"
+              placeholder="Ingrese su contraseña"></ion-input>
+          </ion-item>
+          <ion-button>Ingresar</ion-button>
+        </ion-list>
+      </ion-card-content>
+
+    </ion-card>
   </div>
 </ion-content>
