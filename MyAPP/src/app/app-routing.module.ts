@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'selection',
+    loadChildren: () => import('./View/selection/selection.module').then( m => m.SelectionPageModule)
   },
+
 ];
 
 @NgModule({
