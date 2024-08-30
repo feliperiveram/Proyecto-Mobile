@@ -33,7 +33,7 @@ export class HomePage {
                 password: this.user.password,
               },
             };
-            this.router.navigate(['/perfil'], navigationExtras);
+            // Modificar según contexto this.router.navigate(['/perfil'], navigationExtras);
 
           } else{
             this.mensaje = 'Contraseña no cumple los requisitos'
