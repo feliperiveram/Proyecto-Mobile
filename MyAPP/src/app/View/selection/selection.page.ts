@@ -7,8 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./selection.page.scss'],
 })
 export class SelectionPage implements OnInit {
-
-  constructor() { }
+  username = '';
+  constructor(private router: Router) { 
+    const navegacion = this.router.getCurrentNavigation();
+    const state = navegacion?.extras.state as {
+      username: '';
+      password: '';
+    };
+    this.username = state.username;
+  }
 
   ngOnInit() {
   }
