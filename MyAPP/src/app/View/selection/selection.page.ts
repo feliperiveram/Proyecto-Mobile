@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,  NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'app-selection',
@@ -20,5 +20,12 @@ export class SelectionPage implements OnInit {
   ngOnInit() {
   }
 
-  
+  chofer(){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        username: this.username,
+      },
+    };
+    this.router.navigate(['/chofer'], navigationExtras);
+  }
 }
