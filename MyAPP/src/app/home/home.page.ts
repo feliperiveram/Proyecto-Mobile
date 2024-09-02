@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { RecPassPage } from '../rec-pass/rec-pass.page';
 
 @Component({
   selector: 'app-home',
@@ -52,5 +53,9 @@ export class HomePage {
     } else {
       this.mensaje = 'No se ha ingresado username'
     }
+  }
+
+  olvidar() {
+    this.router.navigate([RecPassPage]);
   }
 }
