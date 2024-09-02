@@ -34,6 +34,11 @@ export class HomePage {
               },
             };
             this.router.navigate(['/selection'], navigationExtras);
+            
+            // Luego agregar esto luego de la animación de carga
+            this.user.username = '';
+            this.user.password = '';
+            this.mensaje = '';
 
           } else{
             this.mensaje = 'Contraseña no cumple los requisitos'
