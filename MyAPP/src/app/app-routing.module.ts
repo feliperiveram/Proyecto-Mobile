@@ -14,6 +14,18 @@ const routes: Routes = [
     path: 'selection',
     loadChildren: () => import('./View/selection/selection.module').then( m => m.SelectionPageModule)
   },
+  {
+    path: 'rec-pass',
+    loadChildren: () => import('./rec-pass/rec-pass.module').then( m => m.RecPassPageModule)
+  },
+  {
+    path: 'chofer',
+    loadChildren: () => import('./View/chofer/chofer.module').then( m => m.ChoferPageModule)
+  },
+  {
+    path: 'pasajero',
+    loadChildren: () => import('./View/pasajero/pasajero.module').then( m => m.PasajeroPageModule)
+  },
 
 ];
 
