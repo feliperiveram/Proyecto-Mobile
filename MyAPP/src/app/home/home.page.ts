@@ -54,8 +54,4 @@ export class HomePage {
       this.mensaje = 'No se ha ingresado username'
     }
   }
-
-  olvidar() {
-    this.router.navigate([RecPassPage]);
-  }
 }
