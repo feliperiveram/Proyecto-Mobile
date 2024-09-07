@@ -28,4 +28,13 @@ export class SelectionPage implements OnInit {
     };
     this.router.navigate(['/chofer'], navigationExtras);
   }
+
+  pasajero(){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        username: this.username,
+      },
+    };
+    this.router.navigate(['/pasajero'], navigationExtras);
+  }
 }
