@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class ChoferPage implements OnInit {
   username = '';
-  constructor(private router: Router) { 
+  myControl = new FormControl('');
+  options: string[] = ['One', 'Two', 'Three'];
+  constructor(private router: Router) {
     const navegacion = this.router.getCurrentNavigation();
     const state = navegacion?.extras.state as {
       username: '';

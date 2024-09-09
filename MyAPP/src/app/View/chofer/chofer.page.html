@@ -19,7 +19,8 @@
 
       <ion-card-header>
         <ion-card-title style="color: #FF8C00;">Programación del Viaje</ion-card-title>
-        <ion-card-subtitle>¡Gracias por compartir el auto y ayudar a reducir la huella de carbono 🌍🚗, {{this.username}}!</ion-card-subtitle>
+        <ion-card-subtitle>¡Gracias por compartir el auto y ayudar a reducir la huella de carbono 🌍🚗,
+          {{this.username}}!</ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
@@ -28,22 +29,37 @@
             <ion-input label="Destino" labelPlacement="floating" placeholder="Ingrese el destino"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input label="Hora de Salida" labelPlacement="floating" placeholder="Ingrese la hora de salida"></ion-input>
+            <ion-input label="Hora de Salida" labelPlacement="floating"
+              placeholder="Ingrese la hora de salida"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input label="Asientos disponibles" labelPlacement="floating" placeholder="Ingrese el número de asientos por persona"></ion-input>
+            <ion-input label="Asientos disponibles" labelPlacement="floating"
+              placeholder="Ingrese el número de asientos por persona"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input label="Precio por persona" labelPlacement="floating" placeholder="Ingrese el precio por persona"></ion-input>
+            <ion-input label="Precio por persona" labelPlacement="floating"
+              placeholder="Ingrese el precio por persona"></ion-input>
           </ion-item>
-          
+
           <div id="cont-botones">
             <ion-button style="margin-right: 20px;">Limpiar</ion-button>
             <ion-button>Continuar</ion-button>
           </div>
         </ion-list>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Number</mat-label>
+            <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+              [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+              @for (option of options; track option) {
+              <mat-option [value]="option">{{option}}</mat-option>
+              }
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
       </ion-card-content>
-      
+
     </ion-card>
   </div>
 
