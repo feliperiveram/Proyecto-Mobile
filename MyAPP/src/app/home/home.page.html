@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="tituloApp">
       TeLlevoAPP
     </ion-title>
   </ion-toolbar>
@@ -22,6 +22,9 @@
       </ion-card-header>
     
       <ion-card-content>
+        <div class="imagenPerfil">
+          <img src="../../assets/img/user-icon.png" alt="">
+        </div>
         <ion-list style="border-radius: 12px;">
           <ion-item>
             <ion-input label="Usuario" [(ngModel)]="user.username" labelPlacement="floating" placeholder="Ingrese su usuario"></ion-input>

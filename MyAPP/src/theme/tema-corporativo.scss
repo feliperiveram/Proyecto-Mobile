@@ -93,3 +93,28 @@ div #cont-botones {
     padding-top: 20px;
     padding-bottom: 10px;
 }
+
+#container ion-input {
+    --color: #FF8C00; /* Cambiar el color del texto */
+  }
+
+// #container ion-card ion-card-content ion-item ion-select{
+//     background-color: #1F1F1F;
+//     color: #1F1F1F;
+// }
+
+#container ion-card ion-card-content ion-item ion-label{
+    color: #FF8C00;
+}
+
+#container ion-card ion-card-content ion-item ion-select ion-select-option{
+    color: #FF8C00;
+}
+
+.tituloApp{
+    color: #FF8C00;
+}
+
+ion-back-button {
+    --color: #FF8C00; /* Cambiar el color del ícono del botón */
+  }
