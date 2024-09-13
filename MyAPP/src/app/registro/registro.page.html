@@ -25,7 +25,16 @@
         <ion-list style="border-radius: 12px;">
           <form [formGroup]="usuario" (ngSubmit)="Registrarse()">
             <ion-item>
-              <ion-input label="Nombre" labelPlacement="floating" placeholder="Ingrese su nombre de usuario" formControlName="nombre"></ion-input>
+              <ion-input label="Nombre de Usuario" labelPlacement="floating" placeholder="Ingrese su nombre de usuario" formControlName="username"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input label="Nombre" labelPlacement="floating" placeholder="Ingrese su nombre" formControlName="nombre"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input label="Apellido" labelPlacement="floating" placeholder="Ingrese su apellido" formControlName="apellido"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input label="Correo" labelPlacement="floating" placeholder="Ingrese su correo electrónico" formControlName="correo"></ion-input>
             </ion-item>
             <ion-item>
               <ion-input label="Contraseña" labelPlacement="floating" type="password" formControlName="clave"
@@ -37,7 +46,7 @@
             </ion-item>
           </form>
           <div id="cont-botones">
-            <ion-button style="margin-right: 20px;">Limpiar</ion-button>
+            <ion-button style="margin-right: 20px;" (click)="limpiar()">Limpiar</ion-button>
             <ion-button (click)="Registrarse()">Registrarse</ion-button>
           </div>
         </ion-list>

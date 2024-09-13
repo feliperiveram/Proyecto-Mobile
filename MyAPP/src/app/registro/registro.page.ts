@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 export class RegistroPage implements OnInit {
 
   usuario = new FormGroup({
+    username: new FormControl(''),
     nombre: new FormControl(''),
+    apellido: new FormControl(''),
+    correo: new FormControl(''),
     clave: new FormControl(''),
     cclave: new FormControl(''),
   });
@@ -50,6 +53,15 @@ export class RegistroPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  limpiar(){
+    this.usuario.controls.username.setValue('');
+    this.usuario.controls.nombre.setValue('');
+    this.usuario.controls.apellido.setValue('');
+    this.usuario.controls.correo.setValue('');
+    this.usuario.controls.clave.setValue('');
+    this.usuario.controls.cclave.setValue('');
   }
 
 }

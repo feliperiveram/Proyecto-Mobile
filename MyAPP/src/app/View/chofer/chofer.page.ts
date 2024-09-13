@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class ChoferPage implements OnInit {
   username = '';
   myControl = new FormControl('');
-  options: string[] = ['One', 'Two', 'Three'];
+  options: string[] = ['Duoc UC Antonio Varas', 'Estación de Metro Manuel Montt'];
   constructor(private router: Router) {
     const navegacion = this.router.getCurrentNavigation();
     const state = navegacion?.extras.state as {

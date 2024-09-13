@@ -10,24 +10,28 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large"></ion-title>
+      <ion-title size="large">TeLlevoAPP</ion-title>
     </ion-toolbar>
   </ion-header>
+
   <div id="container">
     <ion-card>
+
       <ion-card-header>
-        Recuperar contraseña
+        <ion-card-title style="color: #FF8C00;">Recuperación de Contraseña</ion-card-title>
       </ion-card-header>
+    
       <ion-card-content>
-        <ion-list>
-        <ion-item>
-          <ion-input label="Usuario" labelPlacement="floating" placeholder="Coloque su usuario para recuperar contraseña"></ion-input>
-        </ion-item>
-        <div>
-          <ion-button> Recuperar </ion-button>
-        </div>
+        <ion-list style="border-radius: 12px;">
+          <ion-item>
+            <ion-input label="Usuario"  labelPlacement="floating" placeholder="Ingrese su usuario para recuperar su contraseña"></ion-input>
+          </ion-item>
+          <div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
+            <ion-button>Recuperar</ion-button>
+          </div>
         </ion-list>
       </ion-card-content>
+
     </ion-card>
   </div>
 </ion-content>
