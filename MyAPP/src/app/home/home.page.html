@@ -27,7 +27,7 @@
         </div>
         <ion-list style="border-radius: 12px;">
           <ion-item>
-            <ion-input label="Usuario" [(ngModel)]="user.username" labelPlacement="floating" placeholder="Ingrese su usuario"></ion-input>
+            <ion-input label="usuario" [(ngModel)]="user.username" labelPlacement="floating" placeholder="Ingrese su usuario"></ion-input>
           </ion-item>
           <ion-item>
             <ion-input label="Contraseña" [(ngModel)]="user.password" labelPlacement="floating" placeholder="Ingrese su contraseña" type="password"></ion-input>
@@ -40,6 +40,9 @@
           </div>
           <div id="cont-botones">
             <a [routerLink]="['/rec-pass']" style="text-align: center; text-decoration: underline;justify-content: center;font-size: small;">¿Olvidó su contraseña?</a>
+          </div>
+          <div id="cont-botones">
+            <a [routerLink]="['/registro']" style="text-align: center; text-decoration: underline;justify-content: center;font-size: small;">¡ Registrese aqui !</a>
           </div>
         </ion-list>
       </ion-card-content>
