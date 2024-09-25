@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authGuard } from './Servicios/auth.guard';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'selection',
-    loadChildren: () => import('./View/selection/selection.module').then( m => m.SelectionPageModule)
+    loadChildren: () => import('./View/selection/selection.module').then( m => m.SelectionPageModule),
+    canActivate: [authGuard]
   },
   {
     path: 'rec-pass',
@@ -22,12 +24,15 @@ const routes: Routes = [
   },
   {
     path: 'chofer',
-    loadChildren: () => import('./View/chofer/chofer.module').then( m => m.ChoferPageModule)
+    loadChildren: () => import('./View/chofer/chofer.module').then( m => m.ChoferPageModule),
+    canActivate: [authGuard]
   },
   {
     path: 'pasajero',
-    loadChildren: () => import('./View/pasajero/pasajero.module').then( m => m.PasajeroPageModule)
-  },  {
+    loadChildren: () => import('./View/pasajero/pasajero.module').then( m => m.PasajeroPageModule),
+    canActivate: [authGuard]
+  },
+  {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },

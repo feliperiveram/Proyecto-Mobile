@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { RecPassPage } from '../rec-pass/rec-pass.page';
+import { AuthenticatorService } from './../Servicios/authenticator.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { RecPassPage } from '../rec-pass/rec-pass.page';
 })
 export class HomePage {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private auth: AuthenticatorService) {}
 
   user = {
     "username":"",
@@ -22,8 +23,8 @@ export class HomePage {
       // Funciona
       if (this.user.password.length != 0){
         // Comienza verdadera validación
-        if (this.user.username.length >= 3 && this.user.username.length <= 8){
-          if (this.user.password.length == 4){
+        if (this.auth.login(this.user.username, this.user.password)){
+          
             // Funciona completamente
 
             this.mensaje = 'Acceso correcto';
@@ -41,11 +42,9 @@ export class HomePage {
             this.user.password = '';
             this.mensaje = '';
 
-          } else{
-            this.mensaje = 'Contraseña no cumple los requisitos'
           }
-        } else {
-          this.mensaje = 'Username no cumple los requisitos'
+         else {
+          this.mensaje = 'Credenciales incorrectas'
         }
       } else {
         this.mensaje = 'No se ha ingresado contraseña'
