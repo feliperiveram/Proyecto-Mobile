@@ -23,22 +23,22 @@
 
       <ion-card-content>
         <ion-list style="border-radius: 12px;">
-          <form [formGroup]="usuario" (ngSubmit)="Registrarse()">
+          <form [formGroup]="usuario" (ngSubmit)="registrar()">
             <ion-item>
-              <ion-input label="Nombre de Usuario" labelPlacement="floating" placeholder="Ingrese su nombre de usuario" formControlName="username"></ion-input>
+              <ion-input label="Nombre de Usuario" labelPlacement="floating" placeholder="Ingrese su nombre de usuario" formControlName="username" [(ngModel)]="user.username"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input label="Nombre" labelPlacement="floating" placeholder="Ingrese su nombre" formControlName="nombre"></ion-input>
+              <ion-input label="Nombre" labelPlacement="floating" placeholder="Ingrese su nombre" formControlName="nombre" [(ngModel)]="user.nombre"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input label="Apellido" labelPlacement="floating" placeholder="Ingrese su apellido" formControlName="apellido"></ion-input>
+              <ion-input label="Apellido" labelPlacement="floating" placeholder="Ingrese su apellido" formControlName="apellido" [(ngModel)]="user.apellido"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input label="Correo" labelPlacement="floating" placeholder="Ingrese su correo electrónico" formControlName="correo"></ion-input>
+              <ion-input label="Correo" labelPlacement="floating" placeholder="Ingrese su correo electrónico" formControlName="correo" [(ngModel)]="user.correo"></ion-input>
             </ion-item>
             <ion-item>
               <ion-input label="Contraseña" labelPlacement="floating" type="password" formControlName="clave"
-                placeholder="Ingrese su contraseña"></ion-input>
+                placeholder="Ingrese su contraseña" [(ngModel)]="user.password"></ion-input>
             </ion-item>
             <ion-item>
               <ion-input label="Confirmar contraseña" labelPlacement="floating" type="password" formControlName="cclave"
@@ -47,7 +47,7 @@
           </form>
           <div id="cont-botones">
             <ion-button style="margin-right: 20px;" (click)="limpiar()">Limpiar</ion-button>
-            <ion-button (click)="Registrarse()">Registrarse</ion-button>
+            <ion-button (click)="registrar()">Registrarse</ion-button>
           </div>
         </ion-list>
       </ion-card-content>

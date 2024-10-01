@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StorageService } from '../Servicios/storage.service';
 
 @Component({
   selector: 'app-registro',
@@ -20,36 +21,20 @@ export class RegistroPage implements OnInit {
 
   mensaje = '';
 
-  constructor(private router: Router) { }
+  user = {
+    username: "",
+    nombre: "",
+    apellido: "",
+    correo: "",
+    password: ""
+  }
 
-  Registrarse(){
-    if (this.usuario.controls.nombre.value?.length != 0){
-      if (this.usuario.controls.clave.value?.length !=0) {
-        if (this.usuario.controls.nombre.value?.length && this.usuario.controls.nombre.value?.length >= 3 &&  this.usuario.controls.nombre.value?.length <= 8) {
-          if (this.usuario.controls.clave.value?.length == 4) {
-            if (this.usuario.controls.clave.value == this.usuario.controls.cclave.value) {
-              console.log(this.usuario.value);
-              this.router.navigate(['/home']);              
-            }
-            else {
-              this.usuario.controls.cclave.setValue('malisimo')
-            }
-          }
-          else {
-            this.usuario.controls.clave.setValue('terrible');
-          }
-        }
-        else {
-          this.usuario.controls.nombre.setValue('mal');
-        }
-      }
-      else {
-        this.usuario.controls.clave.setValue('malisimo');
-      }
-    }
-    else {
-      this.usuario.controls.nombre.setValue('esta mal');
-    }
+  constructor(private router: Router, private storage: StorageService) {}
+
+  registrar() {
+    console.log(this.user)
+    this.storage.set(this.user.username, this.user);
+    this.router.navigate(['/home'])
   }
 
   ngOnInit() {
