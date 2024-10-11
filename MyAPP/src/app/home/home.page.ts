@@ -18,6 +18,29 @@ export class HomePage {
   };
   mensaje = '';
 
+  validarBDD(){
+    this.auth.loginBDD(this.user.username,this.user.password).then((res)=>{
+      if(res){
+        this.mensaje = 'Acceso correcto';
+
+            let navigationExtras: NavigationExtras = {
+              state: {
+                username: this.user.username,
+                password: this.user.password,
+              },
+            };
+            this.router.navigate(['/selection'], navigationExtras);
+            
+            // Luego agregar esto luego de la animación de carga
+            this.user.username = '';
+            this.user.password = '';
+            this.mensaje = '';
+      }else{
+        this.mensaje="Credenciales Incorrectas"
+      }
+    })
+  }
+
   validar() {
     if (this.user.username.length != 0){
       // Funciona

@@ -12,6 +12,20 @@ export class AuthenticatorService {
     this.connnectionStatus = false;
   }
 
+  loginBDD(user: string, pass: String): Promise<boolean> {
+    return this.storage.get(user).then((res) => {
+      if(res.password==pass){
+        this.connnectionStatus=true;
+        return true;
+      }else{
+        return false
+      }
+    }).catch((error)=>{
+      console.log("Error: "+error)
+      return false
+    })
+  }
+
   login(user: string, pass: String): boolean {
     this.storage.get(user).then((val) => {
       if (val.password == pass) {
