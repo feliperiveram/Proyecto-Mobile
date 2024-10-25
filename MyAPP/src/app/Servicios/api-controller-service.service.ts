@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiControllerServiceService {
 
-  apiUrl = "https://redesigned-space-waffle-jxggjxxr5j6c5499-8000.app.github.dev/api";
+  apiUrl = "http://127.0.0.1:8000/api";
 
   constructor(private http: HttpClient) { }
 

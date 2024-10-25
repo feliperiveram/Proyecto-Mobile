@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { RecPassPage } from '../rec-pass/rec-pass.page';
 import { AuthenticatorService } from './../Servicios/authenticator.service';
+import { ApiControllerServiceService } from '../Servicios/api-controller-service.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,11 @@ import { AuthenticatorService } from './../Servicios/authenticator.service';
 })
 export class HomePage {
 
-  constructor(private router: Router, private auth: AuthenticatorService) {}
+  Apiresponse: any[] = [];
+  TargetValue1 = 'pasajero';
+  TargetValue2 = 'chofer';
+
+  constructor(private router: Router, private auth: AuthenticatorService, private api:ApiControllerServiceService) {}
 
   user = {
     "username":"",
@@ -23,13 +28,23 @@ export class HomePage {
       if(res){
         this.mensaje = 'Acceso correcto';
 
+        const id = this.user.username;
+
             let navigationExtras: NavigationExtras = {
               state: {
                 username: this.user.username,
                 password: this.user.password,
               },
             };
-            this.router.navigate(['/selection'], navigationExtras);
+            this.api.getUser(id).subscribe(
+              (data) => {
+                this.Apiresponse = data
+                console.log(this.Apiresponse)
+                this.checkValuesExist(data, navigationExtras)
+              },
+              (error) => {
+                console.log("Error en la llamada :" + error)
+              });
             
             // Luego agregar esto luego de la animación de carga
             this.user.username = '';
@@ -39,6 +54,16 @@ export class HomePage {
         this.mensaje="Credenciales Incorrectas"
       }
     })
+  }
+
+  checkValuesExist(obj: any, navigationExtras: any) {
+    if(obj && obj.tipo === this.TargetValue1){
+      this.router.navigate(['/pasajero'], navigationExtras);
+    } else if (obj && obj.tipo === this.TargetValue2){
+      this.router.navigate(['/chofer'], navigationExtras);
+    } else {
+      this.router.navigate(['/selection'], navigationExtras);
+    }
   }
 
   validar() {
@@ -77,3 +102,4 @@ export class HomePage {
     }
   }
 }
+

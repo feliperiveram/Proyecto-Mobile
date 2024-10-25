@@ -44,6 +44,12 @@
               <ion-input label="Confirmar contraseña" labelPlacement="floating" type="password" formControlName="cclave"
                 placeholder="Ingrese nuevamente su contraseña"></ion-input>
             </ion-item>
+            <ion-item>
+              <ion-select placeholder="Elige tipo de cuenta" formControlName="tipo"  class="custom-select">
+                <ion-select-option value="pasajero">pasajero</ion-select-option>
+                <ion-select-option value="chofer">chofer</ion-select-option>
+              </ion-select>
+            </ion-item>
           </form>
           <div id="cont-botones">
             <ion-button style="margin-right: 20px;" (click)="limpiar()">Limpiar</ion-button>
